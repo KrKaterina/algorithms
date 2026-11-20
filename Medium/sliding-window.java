@@ -12,6 +12,23 @@ Output: 3
 
 Explanation: The longest substring without repeating characters is "abc".
 */
+public int lengthOfLongestSubstring(String s) {
+
+    Map<Character, Integer> map = new HashMap<>();
+
+    int left = 0;
+    int max = 0;
+
+    for (int right = 0; right < s.length(); right++) {
+
+        char c = s.charAt(right);
+        left = Math.max(left, map.getOrDefault(c, -1) + 1);
+        map.put(c, right);
+        max = Math.max(max, right - left + 1);
+    }
+
+    return max;
+}
 
 public int lengthOfLongestSubstring(String s) {
 
