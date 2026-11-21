@@ -22,14 +22,13 @@ public int minSwaps(int[] nums) {
     for (int num : nums) {
         k += num;
     }
-    4
 
     int ones = 0;
 
     for (int i = 0; i < k; i++) {
         ones += nums[i];
     }
- 2
+ 
     int maxOnes = ones;
 
     for (int i = k; i < nums.length; i++) {
